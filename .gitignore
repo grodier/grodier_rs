@@ -2,16 +2,12 @@
 
 # dependencies
 node_modules
-.pnp
-.pnp.js
+
+# rust
+target
 
 # testing
 coverage
-
-# next.js
-.next/
-out/
-build
 
 # misc
 .DS_Store
