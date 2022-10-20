@@ -1,73 +1,21 @@
-# Turborepo starter
+# Here Goes Nothing
 
-This is an official npm starter turborepo.
+Readme's are great entry point for documentation into a repo: what it is, how a user can interact with it, etc.
 
-## What's inside?
+But here's the fun thing: there are NO rulez!
 
-This turborepo uses [npm](https://www.npmjs.com/) as a package manager. It includes the following packages/apps:
+So here's what I'm going to do with this README (at least for the time being). I want a running journal of things I'm doing with this repo and why I'm doing it. Yeah some of that may be captured in the commits/pull requests, but I want to add a little more context. And then hopefully I can look back and evaluate a pragmatic process or critique a messy mind.
 
-### Apps and Packages
+## Starting out
 
-- `docs`: a [Next.js](https://nextjs.org) app
-- `web`: another [Next.js](https://nextjs.org) app
-- `ui`: a stub React component library shared by both `web` and `docs` applications
-- `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `tsconfig`: `tsconfig.json`s used throughout the monorepo
+Ok so what is this repo? Well it's a personal site. I want to develop the backend in Rust for a couple reasons. First, I want an excuse to play with Rust (and frankly that should be good enough). But I also want to explore web fundamentals without the burden of JavaScript getting in the way.
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+Most of my server experience has been in an isomorphic rendering type of paradigm (ssr with client hydration). Usually that work is closely coupled to a frontend framework (cough - React - cough). However, a framework brings a lot of JavaScript and a lot of room to make mistakes. So my goal with a server is to generate html on the server side and just deliver that. And then sprinkle in JavaScript where's needed. And then I want to feel the pain that caused frameworks to be built with in the first place. BRING IT ON!
 
-### Utilities
+But in doing so I want to see where that pain point actually is. Too often we reach for a framework as the defacto approach, but are we reaching for it to soon? What's wrong with just html? What would JavaScript sprinkles look like if it were agnostic of the backend system? I'm not quite positive yet (other than guesses), but I want to find out.
 
-This turborepo has some additional tools already setup for you:
+Now if this is just starting out as a personal site, then why even have a server. Why not just statically host html - maybe generated with something like 11ty? Well, back to first reason of wanting to play with Rust. But also I like the idea of exploring dynamic server rendered content. What will I build that actually takes advantage of it? Not sure yet, but I am determined.
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+I could use a serverless approach (Because the web is just an api to functions that returns content and "serverless" fits well with that model). And I like the idea of micro services as well. BUT I again want to start with something larger and find where those boundaries for separating things are and how to refactor to that when the PAIN is felt. Maybe I'm crazy, but this feels like an exercise in masochism. Or maybe I'm just curious (my name is George after all).
 
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-npm run build
-```
-
-### Develop
-
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-npm run dev
-```
-
-### Remote Caching
-
-Turborepo can use a technique known as [Remote Caching](https://turborepo.org/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your turborepo:
-
-```
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Pipelines](https://turborepo.org/docs/core-concepts/pipelines)
-- [Caching](https://turborepo.org/docs/core-concepts/caching)
-- [Remote Caching](https://turborepo.org/docs/core-concepts/remote-caching)
-- [Scoped Tasks](https://turborepo.org/docs/core-concepts/scopes)
-- [Configuration Options](https://turborepo.org/docs/reference/configuration)
-- [CLI Usage](https://turborepo.org/docs/reference/command-line-reference)
+Anyways, I can't quite quit JavaScript yet. The package.json is one of my favorite parts of the JavaScript ecosystem. Seeing commands right there in a script block and knowing how to invoke them makes repos easy to navigate, learn, and provides a sense of comfort. And just because I'm quiting JavaScript on my backend, doesn't mean I won't have any on the frontend. And building for the web means you will probably be tied to the JavaScript ecosystem in someway (transpiling TypeScript, web components, generating css, e2e testing, etc). So I want to be set up to build for that as well. In fact I want to build it all in one step. So I'm opting to use turbo repo and setting up the project as a monorepo with my frontend js/css packages and rust server.
